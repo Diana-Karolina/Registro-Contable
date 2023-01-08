@@ -1,0 +1,49 @@
+//PRODUCTOS - GET ALL
+//token
+{
+    "" : ""
+}
+
+//RESPONSE
+[
+    {
+        "idProducto": "",
+        "nombre": "",
+        "stock": 00,
+        "descripcion": "",
+        "costo": 01,
+    }
+]
+
+//PRODUCTOS - GET BY NAME
+//token
+{
+    "nombre" : "Sal Mari"
+}
+
+//RESPONSE
+{
+    "idProducto" : "123",
+    "nombre" : "Sal Marina 1kg",
+    "stock" : 12000,
+    "descripcion" : "sal de mar traidas de las montanias del himalaya",
+    "costo" : 0.65
+}
+//PRODUCTOS - PUT
+//token
+{
+    "idProducto" : "2334",
+    "nombre" : "Sal Marina 1.5kg",
+    "stock" : 120,
+    "descripcion" : "sal marina editada xd",
+    "costo" : 0.95
+}
+//PRODUCTOS - POST
+//token
+{
+    "nombre" : "Sal Marina 1kg",
+    "stock" : 12000,
+    "descripcion" : "sal de mar traidas de las montanias del himalaya",
+    "costo" : 0.65
+}
+

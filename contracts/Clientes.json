@@ -1,0 +1,50 @@
+//CLIENTES - GET ALL
+//token
+{ 
+    "" : ""
+}
+
+//RESPONSE
+[
+    {
+        "idCliente" : "231231",
+        "nombre" : "Rosendo Burgos",
+        "correo" : "kaliestefano@gmail.com",
+        "telefono" : "0990091326",
+        "cedula" : "1729204576"
+    }
+]
+
+//PRODUCTOS - GET BY NAME OR IDENTIFICACION
+//token
+{
+    "nombre" : "Estefano",
+    "cedula" : "17282045"
+}
+
+//RESPONSE
+{
+    "nombre" : "Estefano Chuquicusma",
+    "correo" : "kali_estefano@outlook.com",
+    "telefono" : "0990099009",
+    "cedula" : "1729204576"
+}
+
+//CLIENTES - POST
+//token
+{
+    "nombre" : "Estefano Chuquicusma",
+    "correo" : "kali_estefano@outlook.com",
+    "telefono" : "0990099009",
+    "cedula" : "1729204576"
+}
+
+//CLIENTES - PUT
+//token
+{
+    "idCliente" : "231231",
+    "nombre" : "Estefano Chuqui Buyrgos",
+    "correo" : "kalifa@outlook.com",
+    "telefono" : "0990099009",
+    "cedula" : "1729204576"
+}
