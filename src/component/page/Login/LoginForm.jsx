@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import InputText from "../../../shared/components/InputText";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
 
@@ -11,17 +12,29 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm("onSubmit");
 
+  const navigate = useNavigate();
+
+  const [ErrorLogin, setErrorLogin] = useState(null);
+
   const HandleLogin = async (e) => {
     try {
       console.log("Enviaste el formulario", e);
     //es de ejmplo, no funciona de verdad xd
-    const request = await axios.post("http://localhost:5000/api/Authentication/Login", {
+    const res = await axios.post("https://localhost:7023/api/Authentication/Login", {
       Email: e.Email,
       Password: e.Password,
     });
-    console.log(request)
+    console.log(res);
+    console.log(res.data);
+
+    window.localStorage.setItem("token", res.data);
+    navigate("/")
     }
     catch(error) {
+      setErrorLogin(true);
+      setTimeout(() => {
+        setErrorLogin(null);
+      }, 2500);
       console.log(error);
     }
   };
@@ -70,7 +83,7 @@ const LoginForm = () => {
           <p className="text-danger">{errors.Password.message}</p>
         )}
         <br />
-
+          {ErrorLogin !== null && <p>Error al inciar sesion, el usuario no existe o esta incorrecto!</p>}
         <div className="row mt-3">
           <button type="submit" className="btn btn-primary col-md-2">
             Submit
